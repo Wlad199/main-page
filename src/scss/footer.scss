@@ -1,0 +1,54 @@
+.footer {
+	////background: linear-gradient(90deg, #98612e, #d8dd57);
+	//background-color: #;
+	background: url('@img/footer/back.png') 0 0/cover no-repeat;
+	
+	&__container {
+		@include adaptiveValue("padding-top", 40, 20);
+		@include adaptiveValue("padding-bottom", 40, 20);
+	}
+
+	position: relative;
+
+	img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+
+	&__box {
+		display: flex;
+		gap: 20px;
+		justify-content: space-around;
+		@media (max-width: 767px) {
+			justify-content: space-between;
+			gap: 10px;
+		}
+		@media (max-width: 600px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__copy {
+		text-align: center;
+		@include adaptiveValue("padding-top", 20, 10);
+		@include adaptiveValue("margin-top", 40, 30);
+		color: orange;
+		opacity: 0.5;
+		border-top: 1px solid orange;
+	}
+}
+.button {
+	flex: 0 0 150px;
+	margin: 0;
+	@media (max-width: 767px) {
+		flex: 0 0 130px;
+	}
+	@media (max-width: 600px) {
+		flex: 0 1 calc(50% - 5px);
+	}
+}

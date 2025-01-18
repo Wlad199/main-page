@@ -1,0 +1,250 @@
+// Заголовки, общие БЄМ блоки и проче...
+.title {
+	@include adaptiveValue("font-size", 50, 35);
+	text-align: center;
+	@include adaptiveValue("padding-top", 40, 25);
+	@include adaptiveValue("padding-bottom", 40, 25);
+	color: #282923;
+}
+
+.sub-title {
+	@include adaptiveValue("font-size", 25, 18);
+	line-height: 110%;
+	color: #282923;
+
+	@media (min-width: 767px) {
+		color: #fff;
+	}
+}
+
+//.link{
+//	display: flex;
+//	@include adaptiveValue("font-size", 20, 16);
+//	border: 1px solid #282923;
+//	color: #282923;
+//	padding: 10px 8px;
+//	@media (min-width: 767px) {
+//		padding: 12px 15px;
+//		border: 1px solid #fff;
+//		color: #fff;
+//	}
+//}
+
+// btn ====================================================================================================//
+
+.btn-flip {
+	opacity: 1;
+	outline: 0;
+	color: #fff;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	letter-spacing: 1px;
+	display: inline-block;
+	text-decoration: none;
+
+	&:hover {
+		&:after {
+			opacity: 1;
+			transform: translateY(0) rotateX(0);
+		}
+
+		&:before {
+			opacity: 0;
+			transform: translateY(50%) rotateX(90deg);
+		}
+	}
+
+	&:after {
+		top: 0;
+		left: 0;
+		opacity: 0;
+		width: 100%;
+		color: #fff;
+		display: block;
+		transition: 0.5s;
+		position: absolute;
+		background: #98612e;
+		text-transform: uppercase;
+		content: attr(data-back);
+		transform: translateY(-50%) rotateX(90deg);
+	}
+
+	&:before {
+		top: 0;
+		left: 0;
+		opacity: 1;
+		color: #282923;
+		display: block;
+		height: 40px;
+		width: 130px;
+		transition: 0.5s;
+		position: relative;
+		background: #efae48;
+		content: attr(data-front);
+		transform: translateY(0) rotateX(0);
+	}
+}
+
+// footer btn ====================================================================================================//
+.button {
+	display: inline-flex;
+	height: 40px;
+	width: 150px;
+	//border: 1px solid #282923;
+	margin: 20px 20px 20px 20px;
+	color: #BFC0C0;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: .8em;
+	letter-spacing: 1.5px;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	p {
+		color: #BFC0C0;
+		text-decoration: none;
+		letter-spacing: 1px;
+		position: relative;
+		left: 0;
+		transition: all .35s ease-Out;
+	}
+}
+
+.dub-arrow {
+	width: 100%;
+	height: 100%;
+	background: #BFC0C0;
+	left: -200px;
+	position: absolute;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .35s ease-Out;
+	bottom: 0;
+
+	svg {
+		max-height: 80%;
+	}
+
+	@media (max-width: 600px) {
+		left: -110%;
+	}
+
+	&.dub-arrow-reverse {
+		transform: rotate(180deg);
+		left: 270px;
+	}
+}
+
+.button:hover .dub-arrow {
+	left: 0;
+}
+
+.button:hover p {
+	left: 200px;
+}
+
+.button-reverse:hover p {
+	left: -200px;
+}
+
+// _tab-active =================//
+
+.button._tab-active {
+
+	p {
+		left: 200px;
+	}
+
+	.dub-arrow {
+		left: 0;
+	}
+}
+
+.button-reverse._tab-active {
+
+	p {
+		left: -200px;
+	}
+
+	.dub-arrow {
+		left: 0;
+	}
+}
+
+// button whatsapp ====================================================================================================//
+
+.button__whatsapp {
+	background: #00860d;
+
+	.button {}
+
+	.dub-arrow {
+		background: #00790c;
+
+		svg {
+			fill: #ff9f00;
+		}
+	}
+}
+
+// button telegram ====================================================================================================//
+
+.button__telegram {
+	background: #29a9ea;
+
+	.button {}
+
+	.dub-arrow {
+		background: #2074ff;
+
+		svg {
+			fill: #ff9f00;
+		}
+	}
+}
+
+// button git ====================================================================================================//
+
+.button__git {
+	background: #e84e31;
+
+	.button {}
+
+	.dub-arrow {
+		background: #bf2f15;
+
+		svg {
+			fill: #ff9f00;
+		}
+	}
+}
+
+// button mail ====================================================================================================//
+
+.button__mail {
+	background: #005ff9;
+	text-transform: none;
+
+	@media (max-width: 767px) {
+		font-size: 12px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	.dub-arrow {
+		background: #004bca;
+
+		svg {
+			fill: #ff9f00;
+		}
+	}
+}
