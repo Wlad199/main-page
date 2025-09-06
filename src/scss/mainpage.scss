@@ -287,6 +287,11 @@ body {
 
 }
 
+.about__item:hover .about__text_mn {
+	transition: all 0.5s ease 1.8s;
+
+}
+
 // portfolio ====================================================================================================//
 
 .portfolio {
@@ -517,15 +522,21 @@ body {
 
 	&__link {
 		display: flex;
-		gap: 30px;
+		flex-wrap: wrap;
+		gap: 20px;
 		justify-content: center;
 		flex: 0 0 230px;
 
 		@media (max-width: 600px) {
 			margin-bottom: 15px;
 			justify-content: end;
-			gap: 15px;
+			gap: 10px;
 			margin-right: 10px;
+		}
+
+		@media (max-width: 400px) {
+			gap: 10px;
+			margin-right: 0;
 		}
 
 
@@ -543,6 +554,16 @@ body {
 			border: 1px solid #282923;
 			color: #282923;
 			letter-spacing: 0.5px;
+
+			@media (max-width: 600px) {
+				height: 40px;
+				flex: 0 0 80px;
+			}
+
+			@media (max-width: 400px) {
+				font-size: 14px;
+				flex: 0 0 70px;
+			}
 
 			&:after {
 				position: absolute;
@@ -562,6 +583,14 @@ body {
 			&:hover:after {
 				width: 100%;
 			}
+		}
+
+		a.react:after {
+			background: #3e78c1;
+		}
+
+		a.vue:after {
+			background: #4ec788;
 		}
 
 		a span {
@@ -594,6 +623,10 @@ body {
 			display: inline-block;
 			padding: 3px 15px;
 			border-radius: 20px;
+		}
+
+		li.tech-vue {
+			background-color: #4ec788;
 		}
 	}
 }
