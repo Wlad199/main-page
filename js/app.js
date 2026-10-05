@@ -1,6 +1,6 @@
 (() => {
     var __webpack_modules__ = {
-        534: () => {
+        388: () => {
             var pJS = function(tag_id, params) {
                 var canvas_el = document.querySelector("#" + tag_id + " > .particles-js-canvas-el");
                 this.pJS = {
@@ -4378,7 +4378,7 @@
                 }));
             }
         }), 0);
-        __webpack_require__(534);
+        __webpack_require__(388);
         particlesJS("particles-js", {
             particles: {
                 number: {

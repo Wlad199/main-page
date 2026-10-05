@@ -223,6 +223,10 @@ h6 {
   }
 }
 
+.warn {
+  color: #911542;
+}
+
 .btn-flip {
   opacity: 1;
   outline: 0;
